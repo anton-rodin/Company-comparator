@@ -53,5 +53,5 @@ var MyApp = angular.module('app', ['ui.bootstrap'])
             }
         ];
 
-        Stramgraph.render(document.getElementById('timeline'),data, 200, 500)
+
     }]);

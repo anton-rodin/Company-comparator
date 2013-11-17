@@ -2,6 +2,7 @@
 <html ng-app="app">
 
 <head>
+    <!--<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>-->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
@@ -9,15 +10,17 @@
 <body>
 
 
-<div class="container" ng-controller="ListController as List">
+<div class="" ng-controller="ListController as List">
     <div class="page-header">
         <h1>Вибирете рекламные компании для сравнения</h1>
     </div>
 
     <div class="row-fluid">
-        <div class="col-md-4" ng-class="{'col-md-offset-4': !List.collapsed, 'col-md-4': List.collapsed}">
+        <div class="" ng-class="{'col-md-offset-2 col-md-8': !showGraph, 'col-md-8': showGraph}">
+
             <div class="search-block" ng-click="focusToInput()">
-                <input class="search-input" type="text" ng-model="selected" placeholder="Ведите название компании"
+                <span class="label label-success" ng-repeat="company in selectedCompains">{{company.title}}<button ng-click="removeCompany(company)" class="close">×</button></span>
+                <input class="search-input" type="text" ng-model="typedText" placeholder="Ведите название компании"
                        typeahead="company.title for company in compains | filter:$viewValue | limitTo:8"
                        typeahead-on-select="onSelectValue($item, $model, $label)">
             </div>
@@ -29,7 +32,7 @@
             </div>-->
 
         </div>
-        <div class="" ng-class="{'col-md-0': !List.collapsed, 'col-md-4': List.collapsed}">
+        <div class="" ng-class="{'col-md-0 col-md-offset-2': !showGraph, 'col-md-4': showGraph}">
             <svg id="timeline"></svg>
         </div>
     </div>

@@ -55,12 +55,28 @@
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    cursor: text;
+}
+.search-block .label {
+    display: inline-block;
+    padding-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    font-size: 15px;
+    line-height: 24px;
+    border-radius: 17px;
+}
+.search-block .label .close {
+    margin-left: 6px;
+    margin-top: 1px;
 }
 .search-input {
     border: 0;
     background-color: #debb27;
     outline: 0;
     color: #fff;
+    padding: 0 5px;
+    height: 34px;
     width: 250px;
 }
 
