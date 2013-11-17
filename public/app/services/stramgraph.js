@@ -65,45 +65,6 @@
                     .attr("d", function (d) {return fixPath(area(d.layer));});
 
 
-                var xAxis = d3.svg.axis()
-                    .scale(x)
-                    .orient("bottom");
-
-                var yAxis = d3.svg.axis()
-                    .scale(y)
-                    .orient("left");
-
-
-                svg.append("g")
-                    .attr("class", "x axis")
-                    .attr("transform", "translate(0," + height + ")")
-                    .call(xAxis);
-
-                svg.append("g")
-                    .attr("class", "y axis")
-                    .call(yAxis)
-                    .append("text")
-                    .attr("transform", "rotate(-90)")
-                    .attr("y", 6)
-                    .attr("dy", ".71em")
-                    .style("text-anchor", "end")
-                    .text("Temperature (ºF)");
-
-
-                svg.append("g")
-                    .attr("class", "x axis")
-                    .attr("transform", "translate(0," + height + ")")
-                    .call(xAxis);
-
-                svg.append("g")
-                    .attr("class", "y axis")
-                    .attr("transform", "translate(" + width + ", 0)")
-                    .call(yAxis.orient("right"));
-
-                svg.append("g")
-                    .attr("class", "y axis")
-                    .call(yAxis.orient("left"));
-
 
             }
         };
