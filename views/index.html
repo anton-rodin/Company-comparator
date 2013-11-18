@@ -2,7 +2,7 @@
 <html ng-app="app">
 
 <head>
-    <!--<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>-->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
@@ -23,6 +23,7 @@
                 <input class="search-input" type="text" ng-model="typedText" placeholder="Ведите название компании"
                        typeahead="company.title for company in compains | filter:$viewValue | limitTo:8"
                        typeahead-on-select="onSelectValue($item, $model, $label)">
+                <i class="list-icon"></i>
             </div>
             <!--<div class="list-group">
                 <a ng-repeat="company in compains |orderBy:'-metrics.purchases'" class="list-group-item"

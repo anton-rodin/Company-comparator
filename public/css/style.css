@@ -1,7 +1,7 @@
 .axis path,
 .axis line {
     fill: none;
-    stroke: #000;
+    stroke: #108a93;
     shape-rendering: crispEdges;
 }
 
@@ -11,8 +11,7 @@
 
 .line {
     fill: none;
-    stroke: steelblue;
-    stroke-width: 1.5px;
+    stroke: #fff;
 }
 
 .legend rect {
@@ -49,11 +48,13 @@
 }
 
 .search-block {
-    background-color: #debb27;
-    border: 1px solid #b6991c;
+    position: relative;
+    background-color: #0d747c;
+    /*border: 1px solid #b6991c;*/
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+    margin-top: 10px;
     border-radius: 5px;
     cursor: text;
 }
@@ -72,12 +73,21 @@
 }
 .search-input {
     border: 0;
-    background-color: #debb27;
+    background-color: #0d747c;
     outline: 0;
     color: #fff;
     padding: 0 5px;
     height: 34px;
     width: 250px;
+}
+
+.list-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: -40px;
+    top: 15px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAVCAYAAABc6S4mAAAABmJLR0QA/wD/AP+gvaeTAAAAV0lEQVQ4jWP08/PvYmBgTGFkZJy1ceP6CgYo8PML+M9ABcDEwMCYycDAIPj///8sahiIxYL/0xkYGH4yMjJOo4UFo4AgYBxNRaOAYjCaikYB5WA0FREEAEtxN+kFsxtoAAAAAElFTkSuQmCC);
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
