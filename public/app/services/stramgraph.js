@@ -70,13 +70,34 @@
                     return (path.slice(0, Lidx) + lp + ss + path.slice(Lidx));
                 }
 
+                //remove old data
+                svg.selectAll("path").filter(":not(.domain)")
+                    .transition()
+                    .duration(2000)
+                    .attr("data", function(company) {
+                    var remove = true;
+
+                    for (var i = 0; i <data.length; i++) {
+
+                        if (company.companyName && data[i].title === company.companyName ) {
+                            remove = false;
+                        }
+                    }
+                    if (remove) {
+                        console.log("delete");
+                        d3.select(this).remove();
+                    }
+                })
+
                 //enter
                 svg.selectAll("path").filter(":not(.domain)")
                     .data(layers.reverse())
                     .enter().append("path")
                     .attr("d", function (d, i) {
                         return fixPath(area(d.layer));
-                    });
+                    })
+                    .transition()
+                    .duration(2000);
 
                 //update
                 svg.selectAll("path").filter(":not(.domain)")
