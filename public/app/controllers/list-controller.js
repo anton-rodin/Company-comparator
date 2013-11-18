@@ -3,13 +3,17 @@
 
     app.controller( "ListController", ["$scope", "$http", "$element", "Stramgraph", function ($scope, $http, $element, Stramgraph) {
 
+        var maxLength = 8;
 
         $http.get("/data.json").success(function (data) {
             $scope.compains = data;
         })
 
-        this.addCompany = function(company){
-            company.active = true;
+        this.clickToCompany = function(company){
+            if ($scope.selectedCompains.length < maxLength) {
+                company.active ? $scope.removeCompany(company) : $scope.onSelectValue(company);
+            }
+
         }
         $scope.focusToInput = function() {
             $element.find('input')[0].focus();
@@ -26,23 +30,28 @@
 
         }
 
+        $scope.showList = false;
         $scope.selectedCompains = [];
 
-        $scope.onSelectValue = function($item, $model, $label) {
+        $scope.onSelectValue = function(company) {
+            if ($scope.selectedCompains.length < maxLength) {
+                var position = $scope.selectedCompains.indexOf(company);
 
-            var position = $scope.selectedCompains.indexOf($item);
+                if (position === -1) {
+                    $scope.selectedCompains.push(company);
+                }
+                $scope.typedText = "";
+                company.active = true;
 
-            if (position === -1) {
-                $scope.selectedCompains.push($item);
+                onSelectedCompainChanged();
             }
-            $scope.typedText = "";
-
-            onSelectedCompainChanged();
         }
-        $scope.removeCompany = function($item) {
-            var position = $scope.selectedCompains.indexOf($item);
+        $scope.removeCompany = function(company) {
+            var position = $scope.selectedCompains.indexOf(company);
 
             $scope.selectedCompains.splice(position, 1);
+            company.active = false;
+
             onSelectedCompainChanged();
         }
 

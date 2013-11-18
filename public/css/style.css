@@ -52,7 +52,7 @@
     background-color: #0d747c;
     /*border: 1px solid #b6991c;*/
     width: 100%;
-    padding: 10px;
+    padding: 10px 45px 10px;
     margin-bottom: 10px;
     margin-top: 10px;
     border-radius: 5px;
@@ -81,13 +81,43 @@
     width: 250px;
 }
 
+
+
+.list-logo {
+    position: absolute;
+    right: -220px;
+    width: 200px;
+    top: 18px;
+    height: 21px;
+    overflow: hidden;
+    cursor: pointer;
+
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    -o-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+
+    -webkit-transition: margin 0.2s ease-in-out;
+    -moz-transition: margin 0.2s ease-in-out;
+    -o-transition: margin 0.2s ease-in-out;
+    transition: margin 0.2s ease-in-out;
+}
+.list-logo .text-logo {
+    margin-left: 40px;
+}
+
 .list-icon {
+    position: absolute;
+    display: block;
     width: 24px;
     height: 24px;
-    position: absolute;
-    right: -40px;
-    top: 15px;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAVCAYAAABc6S4mAAAABmJLR0QA/wD/AP+gvaeTAAAAV0lEQVQ4jWP08/PvYmBgTGFkZJy1ceP6CgYo8PML+M9ABcDEwMCYycDAIPj///8sahiIxYL/0xkYGH4yMjJOo4UFo4AgYBxNRaOAYjCaikYB5WA0FREEAEtxN+kFsxtoAAAAAElFTkSuQmCC);
+}
+
+.minimaze .list-logo{
+    right: 0px;
+    width: 40px;
+
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -102,3 +132,49 @@
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #fff;
 }
+
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+    -webkit-transition:0.1s linear all;
+    -moz-transition:0.1s linear all;
+    -o-transition:0.1s linear all;
+    transition:0.1s linear all;
+    display: block !important;
+    overflow: hidden;
+}
+.animate-show.ng-hide-remove {
+    opacity:0;
+    height: 0;
+}
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+    opacity:1;
+    height: 40px;
+}
+.animate-show.ng-hide-add {
+    opacity:1;
+    height: 3000px;
+}
+.animate-show.ng-hide-add.ng-hide-add-active {
+    opacity:0;
+    height: 0;
+}
+
+.company-list {
+    -webkit-transition:0.4s ease-out all;
+    -moz-transition:0.4s ease-out all;
+    -o-transition:0.4s ease-out all;
+    transition:0.4s ease-out all;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+
+
+.company-list.show-list {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+}
+

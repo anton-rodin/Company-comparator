@@ -5,13 +5,6 @@
         var svgG,
             metrics = ["offers", "shares", "landings", "leads", "purchases", "friends"];
 
-        function getSvg(svg) {
-            if (!svgG) {
-
-            }
-        }
-
-
         function formatMetric(d) {
             return metrics[d];
         }
